@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6551d72deec3a0046843beceeebabe12
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - mainEngine: {fileID: 8300000, guid: f2c5a98862e76fa47b482ece1ec83891, type: 3}
+  - suc: {fileID: 8300000, guid: e2c795de8f9f04f448a27c1bd15f3e80, type: 3}
+  - death: {fileID: 8300000, guid: 4ac6d10a1e304c346a53aa6f35f7b125, type: 3}
+  - boost: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
+  - deadpart: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
+      type: 3}
+  - finishedpart: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
