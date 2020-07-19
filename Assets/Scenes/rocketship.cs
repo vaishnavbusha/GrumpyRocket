@@ -7,9 +7,12 @@ public class rocketship : MonoBehaviour
 {
     [SerializeField] float mainthrust = 100f;
     [SerializeField] float rotthrust = 100f;
+    [SerializeField] bool collisions = true;
+
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip suc;
     [SerializeField] AudioClip death;
+
 
     [SerializeField] ParticleSystem boost;
     [SerializeField] ParticleSystem deadpart;
@@ -17,10 +20,15 @@ public class rocketship : MonoBehaviour
 
     Rigidbody body;
     AudioSource aud;
-    bool istransitioning = false; 
-    [SerializeField]bool collisions = true;
+    bool istransitioning = false;
+    //public static bool ispaused = false;
+    //public GameObject pausemenuUI;
     void Start()
     {
+
+        /*pausemenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        ispaused = false;*/
         body = GetComponent<Rigidbody>();
         aud = GetComponent<AudioSource>();
     }
@@ -28,7 +36,14 @@ public class rocketship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!istransitioning)
+        /*if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (ispaused)
+                resume();
+            else
+                pause();
+        }*/
+        if (!istransitioning)
         {
             Thrust();
             processInput();
@@ -38,6 +53,18 @@ public class rocketship : MonoBehaviour
             debugkeys();
         }
     }
+    /*void resume()
+    {
+        pausemenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        ispaused = false;
+    }
+    void pause()
+    {
+        pausemenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        ispaused = true;
+    }*/
     void debugkeys()
     {
         if (Input.GetKey(KeyCode.L))
@@ -92,7 +119,7 @@ public class rocketship : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             body.AddRelativeForce(Vector3.up*mainthrust);
-            if (!aud.isPlaying)
+            if (!aud.isPlaying && Time.timeScale!=0f)
             {
                 aud.PlayOneShot(mainEngine);
                 boost.Play();
