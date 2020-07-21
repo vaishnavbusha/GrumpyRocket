@@ -21,14 +21,9 @@ public class rocketship : MonoBehaviour
     Rigidbody body;
     AudioSource aud;
     bool istransitioning = false;
-    //public static bool ispaused = false;
-    //public GameObject pausemenuUI;
+
     void Start()
     {
-
-        /*pausemenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        ispaused = false;*/
         body = GetComponent<Rigidbody>();
         aud = GetComponent<AudioSource>();
     }
@@ -36,13 +31,6 @@ public class rocketship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (ispaused)
-                resume();
-            else
-                pause();
-        }*/
         if (!istransitioning)
         {
             Thrust();
@@ -53,18 +41,6 @@ public class rocketship : MonoBehaviour
             debugkeys();
         }
     }
-    /*void resume()
-    {
-        pausemenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        ispaused = false;
-    }
-    void pause()
-    {
-        pausemenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        ispaused = true;
-    }*/
     void debugkeys()
     {
         if (Input.GetKey(KeyCode.L))
@@ -79,15 +55,17 @@ public class rocketship : MonoBehaviour
             return;
         switch(obj.gameObject.tag)
         {
-            case "Finish":
+            /*case "Finish":
                  
                 print("finished");
                 aud.Stop();                                                                                    
                 aud.PlayOneShot(suc);
                 finishedpart.Play();
-                Invoke("loadnextlevel", 3f);
-                break;
+                //Invoke("loadnextlevel", 3f);*/
+                //break;
             case "friendly": 
+                break;
+            case "Finish":
                 break;
             default:
                 istransitioning = true;
@@ -108,6 +86,7 @@ public class rocketship : MonoBehaviour
             nextsceneindex = 0;
         }
         SceneManager.LoadScene(nextsceneindex);
+
     }
     void loadsamelevel()
     {

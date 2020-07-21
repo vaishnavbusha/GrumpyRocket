@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 203757156}
   m_Layer: 0
   m_Name: rocketship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -445,13 +445,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainthrust: 1
   rotthrust: 65
+  collisions: 1
   mainEngine: {fileID: 8300000, guid: f2c5a98862e76fa47b482ece1ec83891, type: 3}
   suc: {fileID: 8300000, guid: e2c795de8f9f04f448a27c1bd15f3e80, type: 3}
   death: {fileID: 8300000, guid: 4ac6d10a1e304c346a53aa6f35f7b125, type: 3}
   boost: {fileID: 198100718758753919}
   deadpart: {fileID: 198204746729176145}
   finishedpart: {fileID: 198631065469078580}
-  collisions: 1
 --- !u!1 &6741928542190693279
 GameObject:
   m_ObjectHideFlags: 0
