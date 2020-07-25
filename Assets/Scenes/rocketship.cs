@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Resources;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 public class rocketship : MonoBehaviour
 {
@@ -21,6 +18,7 @@ public class rocketship : MonoBehaviour
     Rigidbody body;
     AudioSource aud;
     bool istransitioning = false;
+    private 
 
     void Start()
     {
@@ -93,11 +91,12 @@ public class rocketship : MonoBehaviour
         int cursceneindex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(cursceneindex);
     }
-    void Thrust()
+    public void Thrust()
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            body.AddRelativeForce(Vector3.up*mainthrust);
+            body.AddRelativeForce(0,1*mainthrust,0);
+            //body.transform.Translate(0, Input.GetAxis("Vertical") * mainthrust, 0);
             if (!aud.isPlaying && Time.timeScale!=0f)
             {
                 aud.PlayOneShot(mainEngine);
@@ -106,25 +105,26 @@ public class rocketship : MonoBehaviour
         }
         else//stop thrusting
         {
-            aud.Stop();
-            boost.Stop();
+          aud.Stop();
+          boost.Stop();
         }
     }
-    void processInput()
+    public void processInput()
     {
         body.freezeRotation = false;
         if (Input.GetKey(KeyCode.A))
-        {
-
-            transform.Rotate(Vector3.forward*rotthrust*Time.deltaTime);
-
-        }
-        else if(Input.GetKey(KeyCode.D))
-        {
-
-            transform.Rotate(-Vector3.forward*rotthrust*Time.deltaTime);
-
-        }
+            lefttilt();
+        else if (Input.GetKey(KeyCode.D))
+            righttilt();
         body.freezeRotation = true;
     }
+    public void lefttilt()
+    {
+            transform.Rotate(0,0,1*rotthrust*Time.deltaTime);
+    }
+    public void righttilt()
+    {
+        transform.Rotate(0,0,-1 * rotthrust * Time.deltaTime);
+    }
+
 }
