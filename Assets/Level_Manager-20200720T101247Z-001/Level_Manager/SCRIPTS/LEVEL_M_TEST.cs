@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class LEVEL_M_TEST : MonoBehaviour {
 
     public GameObject LoadingScene;
+    public Sprite onestar;
+    public Sprite twostar;
+    public Sprite threestar;
 
 
     [System.Serializable]
@@ -28,6 +31,7 @@ public class LEVEL_M_TEST : MonoBehaviour {
     {
         //Delete();
         FillList();
+
 	}
 	void FillList()
     {
@@ -36,7 +40,8 @@ public class LEVEL_M_TEST : MonoBehaviour {
             
             GameObject newbutton = Instantiate(LEVELButton) as GameObject;
             level_button_new button = newbutton.GetComponent<level_button_new>();
-
+            //button.image.sprite = onestar;
+            
             button.LevelText.text =  level.LevelText;
 
             if (PlayerPrefs.GetInt("Level" + button.LevelText.text) == 1)
@@ -45,13 +50,36 @@ public class LEVEL_M_TEST : MonoBehaviour {
                 level.isInteractible = true;
             }
 
-            button.unlocked = level.Unlock;
+            //button.unlocked = level.Unlock;
             button.GetComponent<Button>().interactable = level.isInteractible;
             button.GetComponent<Button>().onClick.AddListener(() => LoadLevel("Level" + button.LevelText.text));
             //button.GetComponent<Button>().onClick.AddListener(() => StarCor("Level" + button.LevelText.text));
+            //switch (PlayerPrefs.GetInt("Level1Score", 0))
+            //{
+            //    case 1:
+            //        button.image.sprite = onestar;
+            //        break;
+            //    case 2:
+            //        button.image.sprite = twostar;
+            //        break;
+            //    case 3:
+            //        button.image.sprite = threestar;
+            //        break;
 
+            //}
+            //switch (PlayerPrefs.GetInt("Level2Score", 0))
+            //{
+            //    case 1:
+            //        button.image.sprite = onestar;
+            //        break;
+            //    case 2:
+            //        button.image.sprite = twostar;
+            //        break;
+            //    case 3:
+            //        button.image.sprite = threestar;
+            //        break;
 
-
+            //}
             newbutton.transform.SetParent(Spacer);
         }
         SAVE();
@@ -63,7 +91,7 @@ public class LEVEL_M_TEST : MonoBehaviour {
             foreach (GameObject buttons in allbuttons)
             {
                 level_button_new button = buttons.GetComponent<level_button_new>();
-                PlayerPrefs.SetInt("Level" + button.LevelText.text, button.unlocked);
+              //  PlayerPrefs.SetInt("Level" + button.LevelText.text, button.unlocked);
             }
         }
     }

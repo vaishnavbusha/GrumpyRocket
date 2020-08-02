@@ -7,48 +7,32 @@ public class GOAL : MonoBehaviour {
     [SerializeField] ParticleSystem finishedpart;
     [SerializeField] AudioClip suc;
 
-    public GameObject level_complete;
+    //public GameObject level_complete;
     AudioSource aud;
     public int unlock;
-
+    public level1 cle;
+    string levelname = "Level";
+    levelmanagerscript completed;
     void Start()
     {
         Time.timeScale = 1;
 
-        unlock = SceneManager.GetActiveScene().buildIndex + 1;
-
-        level_complete.SetActive(false);
-
-
+        unlock = SceneManager.GetActiveScene().buildIndex;
+        levelname += unlock;
     }
-
-    /*void OnTriggerEnter(Collider target)
-    {
-        if (target.CompareTag("Player"))
-        {
-
-            
-            PlayerPrefs.SetInt("levelReached", unlock);
-            level_complete.SetActive(true);
-
-
-        }
-    }*/
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "friendly")
         {
             finishedpart.Play();
+            cle.clear = true;
             Invoke("levelcomplete", 2.5f);
-            PlayerPrefs.SetInt("levelReached", unlock);
-            //
         }
 
 
     }
     void levelcomplete()
     {
-        
-        level_complete.SetActive(true);
+        SceneManager.LoadScene(levelname);
     }
 }

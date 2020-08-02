@@ -18,12 +18,12 @@ public class rocketship : MonoBehaviour
     Rigidbody body;
     AudioSource aud;
     bool istransitioning = false;
-    private 
-
+    public AudioSource thrustaudiosource;
     void Start()
     {
         body = GetComponent<Rigidbody>();
         aud = GetComponent<AudioSource>();
+        thrustaudiosource = thrustaudiosource.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class rocketship : MonoBehaviour
     {
         if (!istransitioning)
         {
-            Thrust();
+            //Thrust();
             processInput();
         }
         if(Debug.isDebugBuild)
@@ -47,6 +47,7 @@ public class rocketship : MonoBehaviour
             collisions = !collisions;
 
     }
+
     void OnCollisionEnter(Collision obj)
     {
         if (istransitioning || !collisions)
@@ -91,24 +92,43 @@ public class rocketship : MonoBehaviour
         int cursceneindex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(cursceneindex);
     }
-    public void Thrust()
+    //public void Thrust()
+    //{
+    //    if(Input.GetKey(KeyCode.Space))
+    //    {
+    //        body.AddRelativeForce(0,1*mainthrust,0);
+    //        if (!aud.isPlaying && Time.timeScale!=0f)
+    //        {
+    //            aud.PlayOneShot(mainEngine);
+                
+    //        }
+    //        boost.Play();
+    //    }
+    //    else//stop thrusting
+    //    {
+    //      aud.Stop();
+    //      boost.Stop();
+    //    }
+    //}
+    public void thrustbut(bool ispressing)
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (ispressing&&!istransitioning)
         {
-            body.AddRelativeForce(0,1*mainthrust,0);
-            //body.transform.Translate(0, Input.GetAxis("Vertical") * mainthrust, 0);
-            if (!aud.isPlaying && Time.timeScale!=0f)
+            body.AddRelativeForce(0, 1 * mainthrust, 0);
+            if (!thrustaudiosource.isPlaying && Time.timeScale != 0f)
             {
-                aud.PlayOneShot(mainEngine);
+                thrustaudiosource.PlayOneShot(mainEngine);
                 boost.Play();
             }
+            
         }
         else//stop thrusting
         {
-          aud.Stop();
-          boost.Stop();
+            thrustaudiosource.Stop();
+            boost.Stop();
         }
     }
+
     public void processInput()
     {
         body.freezeRotation = false;
@@ -116,11 +136,12 @@ public class rocketship : MonoBehaviour
             lefttilt();
         else if (Input.GetKey(KeyCode.D))
             righttilt();
+        
         body.freezeRotation = true;
     }
     public void lefttilt()
     {
-            transform.Rotate(0,0,1*rotthrust*Time.deltaTime);
+        transform.Rotate(0,0,1*rotthrust*Time.deltaTime);
     }
     public void righttilt()
     {

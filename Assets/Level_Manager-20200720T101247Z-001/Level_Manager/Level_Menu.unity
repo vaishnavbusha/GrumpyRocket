@@ -363,6 +363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadingScene: {fileID: 0}
+  onestar: {fileID: 21300000, guid: 459882ca97529f740b227f986f4b94fb, type: 3}
+  twostar: {fileID: 21300000, guid: 0cb16cbc19b394143a4af91b8ebdf504, type: 3}
+  threestar: {fileID: 21300000, guid: a947efc53b2628249bde7a68a590a2ea, type: 3}
   LEVELButton: {fileID: 1548974648783802, guid: 612a7892ffc95de46a7dcf759a88c0e4,
     type: 3}
   Spacer: {fileID: 1164695149}

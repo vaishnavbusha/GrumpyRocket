@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/levels/first_screen.unity
     guid: d8724e90a109dc7499490ddae68ba67f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Level_Manager-20200720T101247Z-001/Level_Manager/Level_Menu.unity
     guid: 096ab4bf220d5b4469760d8642e48791
   - enabled: 1

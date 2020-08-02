@@ -9,8 +9,25 @@ public class pausemenu : MonoBehaviour
     public static bool pause=false;
     // Update is called once per frame
     public GameObject pausemenuUI;
+    private static pausemenu instance = null;
+
+    // Game Instance Singleton
+    public static pausemenu Instance => instance;
+    private void Awake()
+    {
+        // if the singleton hasn't been initialized yet
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;//Avoid doing anything else
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
     void Start()
     {
+        pausemenuUI.SetActive(false);
     }
     public void resume()
     {
@@ -25,6 +42,10 @@ public class pausemenu : MonoBehaviour
     public void quit()
     {
         Application.Quit();
+    }
+    public void pauseactive()
+    {
+        pause = !pause;
     }
     void Update()
     {

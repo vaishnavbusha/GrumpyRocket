@@ -15,11 +15,9 @@ public class touchcontrols : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
     public void uparrow()
-    {
-            rocket.Thrust();        
+    {     
     }
     public void leftarrow()
     {
