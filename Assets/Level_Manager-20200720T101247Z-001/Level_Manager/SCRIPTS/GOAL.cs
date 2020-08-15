@@ -8,15 +8,18 @@ public class GOAL : MonoBehaviour {
     [SerializeField] AudioClip suc;
 
     //public GameObject level_complete;
+    public levelfinished ob;
     AudioSource aud;
     public int unlock;
-    public level1 cle;
+    public GameObject buttons;
+    //public level1 cle;
+    public bool clear = false;
     string levelname = "Level";
     levelmanagerscript completed;
     void Start()
     {
         Time.timeScale = 1;
-
+        //cle = GameObject.FindObjectOfType<level1>();
         unlock = SceneManager.GetActiveScene().buildIndex;
         levelname += unlock;
     }
@@ -25,13 +28,13 @@ public class GOAL : MonoBehaviour {
         if (collision.gameObject.tag == "friendly")
         {
             finishedpart.Play();
-            cle.clear = true;
-            Invoke("levelcomplete", 2.5f);
+            clear = true;
+            ob.lev.SetActive(true);
+            buttons.SetActive(false);
+            //Invoke("levelcomplete", 2.5f);
         }
-
-
     }
-    void levelcomplete()
+    public void levelcomplete()
     {
         SceneManager.LoadScene(levelname);
     }

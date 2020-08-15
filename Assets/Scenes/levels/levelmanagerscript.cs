@@ -9,14 +9,11 @@ using TMPro;
 public class levelmanagerscript : MonoBehaviour
 {
     int totalstars=0;
-
     public Button[] buttons;
     [System.Serializable]
     public class Level
     {
-        
         public string LevelText;
-        //public Button.ButtonClickedEvent OnClick;
     }
     public Level[] buttonlist;
     public Sprite[] stars;
@@ -40,21 +37,6 @@ public class levelmanagerscript : MonoBehaviour
             }
             //PlayerPrefs.DeleteKey("level" + button.LevelText.text);
             buttons[i].image.sprite = stars[levelscore];
-            //switch (levelscore)
-            //{
-            //    case 1:
-            //        buttons[i].image.sprite = onestar;
-            //        break;
-            //    case 2:
-            //        buttons[i].image.sprite = twostar;
-            //        break;
-            //    case 3:
-            //        buttons[i].image.sprite = threestar;
-            //        break;
-            //    default:
-            //        buttons[i].image.sprite = zerostar;
-            //        break;
-            //}
             button.GetComponent<Button>().onClick.AddListener(() => LoadLevel("Level" + button.LevelText.text));
         }
     }
@@ -62,8 +44,6 @@ public class levelmanagerscript : MonoBehaviour
     {
         SceneManager.LoadScene(Name);
     }
-
-    // Update is called once per frame
     void Update()
     {
     }

@@ -21,7 +21,6 @@ public class pausemenu : MonoBehaviour
             Destroy(this.gameObject);
             return;//Avoid doing anything else
         }
-
         instance = this;
         DontDestroyOnLoad(this.gameObject);
     }

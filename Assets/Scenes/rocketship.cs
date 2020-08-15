@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 public class rocketship : MonoBehaviour
 {
@@ -34,19 +35,19 @@ public class rocketship : MonoBehaviour
             //Thrust();
             processInput();
         }
-        if(Debug.isDebugBuild)
-        {
-            debugkeys();
-        }
+        //if(Debug.isDebugBuild)
+        //{
+        //    debugkeys();
+        //}
     }
-    void debugkeys()
-    {
-        if (Input.GetKey(KeyCode.L))
-            loadnextlevel();
-        else if (Input.GetKey(KeyCode.C))
-            collisions = !collisions;
+    //void debugkeys()
+    //{
+    //    if (Input.GetKey(KeyCode.L))
+    //        loadnextlevel();
+    //    else if (Input.GetKey(KeyCode.C))
+    //        collisions = !collisions;
 
-    }
+    //}
 
     void OnCollisionEnter(Collision obj)
     {
@@ -66,6 +67,8 @@ public class rocketship : MonoBehaviour
                 break;
             case "Finish":
                 break;
+            //case "levelcompletepad":
+
             default:
                 istransitioning = true;
                 aud.Stop();
@@ -74,19 +77,19 @@ public class rocketship : MonoBehaviour
                 Invoke("loadsamelevel", 1f);
                 break;
         }
- 
+        
     }
-    void loadnextlevel()
-    {
-        int cursceneindex = SceneManager.GetActiveScene().buildIndex;
-        int nextsceneindex = cursceneindex+1;
-        if(nextsceneindex == SceneManager.sceneCountInBuildSettings)
-        {
-            nextsceneindex = 0;
-        }
-        SceneManager.LoadScene(nextsceneindex);
+    //void loadnextlevel()
+    //{
+    //    int cursceneindex = SceneManager.GetActiveScene().buildIndex;
+    //    int nextsceneindex = cursceneindex+1;
+    //    if(nextsceneindex == SceneManager.sceneCountInBuildSettings)
+    //    {
+    //        nextsceneindex = 0;
+    //    }
+    //    SceneManager.LoadScene(nextsceneindex);
 
-    }
+    //}
     void loadsamelevel()
     {
         int cursceneindex = SceneManager.GetActiveScene().buildIndex;
@@ -147,5 +150,4 @@ public class rocketship : MonoBehaviour
     {
         transform.Rotate(0,0,-1 * rotthrust * Time.deltaTime);
     }
-
 }
