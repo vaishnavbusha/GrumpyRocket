@@ -11,7 +11,9 @@ public class rightbuttonscript : MonoBehaviour, IPointerDownHandler, IPointerUpH
     // Start is called before the first frame update
     void Start()
     {
-        rocket = GameObject.Find("rocketship").GetComponent<rocketship>();
+        //rocket = GameObject.Find("rocketship(Clone)").GetComponent<rocketship>();
+        //rocket = GameObject.FindObjectOfType<rocketship>().GetComponent<rocketship>();
+        rocket = GameObject.FindGameObjectWithTag("Player").GetComponent<rocketship>();
     }
     public void OnPointerDown(PointerEventData eventData)
     {

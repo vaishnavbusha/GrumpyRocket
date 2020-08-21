@@ -25,7 +25,7 @@ public class GOAL : MonoBehaviour {
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "friendly")
+        if (collision.gameObject.tag == "Player")
         {
             finishedpart.Play();
             clear = true;

@@ -952,7 +952,7 @@ GameObject:
   - component: {fileID: 8042881426300059699}
   m_Layer: 0
   m_Name: rocketship
-  m_TagString: friendly
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -965,7 +965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7160556121411784009}
   m_LocalRotation: {x: 0, y: 0.17364816, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -52.281643, y: 33.07, z: -0.69}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 40.70727, y: 76.66459, z: 37.267017}
   m_Children:
   - {fileID: 8039432610285452956}

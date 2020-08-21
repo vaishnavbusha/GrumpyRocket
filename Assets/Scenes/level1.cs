@@ -17,7 +17,7 @@ public class level1 : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        print(timer);
+        //print(timer);
         if (timer < 20f && curscore <=3 && complete.clear)
         {
             PlayerPrefs.SetInt("level1", 3);

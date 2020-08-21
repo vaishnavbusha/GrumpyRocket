@@ -448,11 +448,10 @@ GameObject:
   - component: {fileID: 6741928541775084867}
   - component: {fileID: 203757155}
   - component: {fileID: 203757156}
-  - component: {fileID: 1919375683}
   - component: {fileID: 1037403993}
   m_Layer: 0
   m_Name: rocketship
-  m_TagString: friendly
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6741928541775084868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6741928542190693278}
@@ -517,21 +516,6 @@ MonoBehaviour:
   deadpart: {fileID: 198204746729176145}
   finishedpart: {fileID: 198631065469078580}
   thrustaudiosource: {fileID: 429332969}
---- !u!114 &1919375683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6741928541775084868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1465209106, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!82 &1037403993
 AudioSource:
   m_ObjectHideFlags: 0

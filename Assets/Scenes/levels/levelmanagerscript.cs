@@ -8,7 +8,7 @@ using TMPro;
 
 public class levelmanagerscript : MonoBehaviour
 {
-    int totalstars=0;
+    public int totalstars=0;
     public Button[] buttons;
     [System.Serializable]
     public class Level

@@ -13,6 +13,7 @@ public class camerafollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         Vector3 desiredposition = target.position + offset;
         Vector3 smoothedposition = Vector3.SmoothDamp(transform.position, desiredposition,ref velocity,smoothspeed);
         //Vector3 smoothedposition = Vector3.Lerp(transform.position, desiredposition, smoothspeed * Time.deltaTime);

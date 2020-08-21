@@ -20,6 +20,11 @@ public class rocketship : MonoBehaviour
     AudioSource aud;
     bool istransitioning = false;
     public AudioSource thrustaudiosource;
+
+    public int price;
+    public string Name;
+    public int thrustspeed;
+    public int rotspeed;
     void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -28,8 +33,14 @@ public class rocketship : MonoBehaviour
     }
 
     // Update is called once per frame
+    private void FixedUpdate()
+    {
+        
+    }
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "shop")
+            return;
         if (!istransitioning)
         {
             //Thrust();
