@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 891305588}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: friendly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2168,7 +2168,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1617004359}
   m_FillRect: {fileID: 1299336064}
   m_HandleRect: {fileID: 1617004357}
@@ -2279,7 +2279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698645077}
   m_LocalRotation: {x: 0.23076726, y: -0, z: -0, w: 0.973009}
-  m_LocalPosition: {x: 0, y: 6.81, z: -11.81}
+  m_LocalPosition: {x: 0, y: 7.5, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2832,7 +2832,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2036528169}
   m_FillRect: {fileID: 1591632545}
   m_HandleRect: {fileID: 2036528167}
@@ -3196,7 +3196,7 @@ PrefabInstance:
     - target: {fileID: 1269806600742011448, guid: f9924bed306d5b64db46d74ea14b32fb,
         type: 3}
       propertyPath: vehicles.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1269806600742011448, guid: f9924bed306d5b64db46d74ea14b32fb,
         type: 3}
@@ -3209,6 +3209,30 @@ PrefabInstance:
       propertyPath: vehicles.Array.data[1]
       value: 
       objectReference: {fileID: 7160556121411784009, guid: c623acd16aced874cb5e2f69c217347a,
+        type: 3}
+    - target: {fileID: 1269806600742011448, guid: f9924bed306d5b64db46d74ea14b32fb,
+        type: 3}
+      propertyPath: vehicles.Array.data[2]
+      value: 
+      objectReference: {fileID: 3807873552384289014, guid: f530992c5222b40428a3c9db4067756e,
+        type: 3}
+    - target: {fileID: 1269806600742011448, guid: f9924bed306d5b64db46d74ea14b32fb,
+        type: 3}
+      propertyPath: vehicles.Array.data[3]
+      value: 
+      objectReference: {fileID: 3751393515409400163, guid: fb9c7f59dcd7d5044a686e98708e1108,
+        type: 3}
+    - target: {fileID: 1269806600742011448, guid: f9924bed306d5b64db46d74ea14b32fb,
+        type: 3}
+      propertyPath: vehicles.Array.data[4]
+      value: 
+      objectReference: {fileID: 5988797492400298841, guid: e93fbf706d806ae48b7fbfae63211931,
+        type: 3}
+    - target: {fileID: 1269806600742011448, guid: f9924bed306d5b64db46d74ea14b32fb,
+        type: 3}
+      propertyPath: vehicles.Array.data[5]
+      value: 
+      objectReference: {fileID: 3850509646441103045, guid: 24b00705d1712614099cbb65f16babe1,
         type: 3}
     - target: {fileID: 1269806600742011449, guid: f9924bed306d5b64db46d74ea14b32fb,
         type: 3}
@@ -3291,13 +3315,27 @@ GameObject:
   - component: {fileID: 7500028091167265000}
   - component: {fileID: 6898010886547889997}
   - component: {fileID: 8673474468903267207}
+  - component: {fileID: 7160340105206008403}
   m_Layer: 0
   m_Name: base
-  m_TagString: Untagged
+  m_TagString: friendly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7160340105206008403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160340105206008402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02062921, y: 0.054687053, z: 0.02169084}
+  m_Center: {x: -0.0010889418, y: -0.012345483, z: 0}
 --- !u!4 &7500028091167265000
 Transform:
   m_ObjectHideFlags: 0

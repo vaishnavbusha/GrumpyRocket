@@ -21,6 +21,8 @@ public class rocketship : MonoBehaviour
     bool istransitioning = false;
     public AudioSource thrustaudiosource;
 
+    public Vector3 com;
+
     public int price;
     public string Name;
     public int thrustspeed;
@@ -30,6 +32,7 @@ public class rocketship : MonoBehaviour
         body = GetComponent<Rigidbody>();
         aud = GetComponent<AudioSource>();
         thrustaudiosource = thrustaudiosource.GetComponent<AudioSource>();
+        body.centerOfMass = com;
     }
 
     // Update is called once per frame
