@@ -44,4 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicles:
-  - {fileID: 6741928541775084868, guid: 1c2022781f114964194293dc03557306, type: 3}
+  - {fileID: 6741928541775084868, guid: 37275d347f2d0a7479865d4c55d563d1, type: 3}
+  - {fileID: 7160556121411784009, guid: c623acd16aced874cb5e2f69c217347a, type: 3}
+  - {fileID: 3807873552384289014, guid: f530992c5222b40428a3c9db4067756e, type: 3}
+  - {fileID: 3751393515409400163, guid: fb9c7f59dcd7d5044a686e98708e1108, type: 3}
+  - {fileID: 5988797492400298841, guid: e93fbf706d806ae48b7fbfae63211931, type: 3}
+  - {fileID: 3850509646441103045, guid: 24b00705d1712614099cbb65f16babe1, type: 3}
